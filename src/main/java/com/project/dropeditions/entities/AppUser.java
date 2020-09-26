@@ -8,6 +8,9 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 ;
 
@@ -19,6 +22,8 @@ public class AppUser implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 3371303648732509020L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
 	@ElementCollection //makes another table with user id and role
 	@Enumerated(EnumType.STRING)
